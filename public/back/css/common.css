@@ -1,4 +1,21 @@
-body{
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html,body{
+  height: 100%;
+}
+a:link,
+a:visited,
+a:hover,
+a:active{
+  text-decoration: none;
+}
+.red{
+  color: #A94442;
+}
+.body_bg{
   background-color: #222D32;
 }
 .mt_150{
@@ -8,4 +25,96 @@ body{
   height:40px;
   line-height:40px;
   font-size: 20px;
+}
+
+/*侧边栏开始*/
+
+.aside{
+  width: 180px;
+  background-color: #222D32;
+  height:100%;
+  position: fixed;
+  top:0;
+  left:0;
+  transition: all 1s;
+}
+.aside.hideMenu{
+  left: -180px;
+}
+.aside_brand{
+  height:50px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  background-color: #367FA9;
+}
+.aside_brand a {
+  color:#fff;
+}
+.aside_user{
+  padding-top: 30px;
+  height: 180px;
+}
+.aside_user img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.aside_user p{
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  height: 40px;
+  line-height:40px;
+}
+.aside_nav a{
+  display: block;
+  padding-left:40px;
+  color: #fff;
+  font-size: 14px;
+  height:40px;
+  line-height: 40px;
+  border-left:3px solid transparent;
+}
+.aside_nav a.current{
+  background-color: #1D1F21;
+  border-left:3px solid #006699;
+}
+.aside_nav i{
+  margin-right:5px;
+}
+.child a{
+  padding-left: 60px;
+}
+
+
+/* 主体部分开始*/
+.main{
+  padding-left:180px;
+  width: 100%;
+  position: fixed;
+  top:0;
+  right:0;
+  transition: all 1s;
+}
+.main_top{
+  height: 50px;
+  line-height:50px;
+  background-color: #3C8DBC;
+}
+.main.hideMenu{
+  padding-left:0;
+}
+.main_top a{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  color: #fff;
+}
+.main_content{
+  margin-top:20px;
 }
