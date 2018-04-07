@@ -12,6 +12,11 @@ a:hover,
 a:active{
   text-decoration: none;
 }
+.table.table-bordered th,
+.table.table-bordered td{
+  text-align: center;
+  vertical-align: middle;
+}
 .red{
   color: #A94442;
 }
@@ -37,6 +42,7 @@ a:active{
   top:0;
   left:0;
   transition: all 1s;
+  z-index: 999;
 }
 .aside.hideMenu{
   left: -180px;
