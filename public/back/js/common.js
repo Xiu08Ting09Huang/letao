@@ -12,6 +12,20 @@ $(document).ajaxStop(function () {
     NProgress.done();
   },1000)
 })
+// 拦截设置
+if(location.href.indexOf('login.html')==-1){
+  $.ajax({
+    url:'/employee/checkRootLogin',
+    type:'get',
+    success:function (info) {
+      console.log(info);
+      if(info.error==400){
+        location.href='login.html'
+      }
+    }
+  })
+}
+
 
 $(function () {
 //  一级菜单显示隐藏
@@ -42,9 +56,8 @@ $(function () {
       }
     })
   })
-//  点击a切换背景
-  $('.aside_nav a').on('click',function () {
-    $(this).addClass('current');
-    $()
-  })
-})
+
+});
+
+
+

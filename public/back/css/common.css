@@ -118,3 +118,14 @@ a:active{
 .main_content{
   margin-top:20px;
 }
+
+
+/*echarts 部分*/
+/*.lt_content{*/
+  /*width: 100%;*/
+/*}*/
+.echarts_1,
+.echarts_2{
+  width:48%;
+  height: 400px;
+}
