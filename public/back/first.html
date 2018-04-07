@@ -22,11 +22,11 @@
   <!--导航-->
   <div class="aside_nav">
     <ul>
-      <li><a href="user.html" class="current"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+      <li><a href="user.html"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
       <li>
         <a href="javascript:;" class="category"><i class="glyphicon glyphicon-th-list"></i>分类管理</a>
-        <div class="child" style="display: none;">
-          <a href="first.html">一级菜单</a>
+        <div class="child">
+          <a href="first.html" class="current">一级菜单</a>
           <a href="second.html">二级菜单</a>
         </div>
       </li>
@@ -45,12 +45,59 @@
       <!--路径导航-->
       <ol class="breadcrumb">
         <li><a href="#">系统管理</a></li>
-        <li class="active">用户管理</li>
+        <li class="active">分类管理</li>
+        <li class="active">一级分类</li>
       </ol>
+      <button class="btn btn-default" id="addBtn">添加分类</button>
+      <div class="lt_content mt_20">
+
+        <table class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th style="width:20%;">序号</th>
+            <th style="width:80%;">用户名</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <!-- 刨个坑 -->
+
+          </tbody>
+        </table>
+
+        <!-- 分页dom结构 -->
+        <div class="text-right">
+          <ul id="paginator"></ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 添加模态框-->
+<div class="modal fade" id="addModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入一级分类" name="categoryName">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary" form="form">添加</button>
+      </div>
     </div>
   </div>
 </div>
 
+<!--退出模态框-->
 <div class="modal fade" id="logOut">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -71,8 +118,18 @@
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
 <script src="js/first.js"></script>
+<script type="text/template" id="firstTmp">
+  {{each rows v i}}
+  <tr>
+    <td>{{(page-1)*size + (i + 1)}}</td>
+    <td>{{v.categoryName}}</td>
+  </tr>
+  {{/each}}
+</script>
 </body>
 </html>
