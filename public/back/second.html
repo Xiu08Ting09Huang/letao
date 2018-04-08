@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>首页</title>
+  <title>二级分类</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -22,12 +22,12 @@
   <!--导航-->
   <div class="aside_nav">
     <ul>
-      <li><a href="user.html" class="current"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+      <li><a href="user.html"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
       <li>
         <a href="javascript:;" class="category"><i class="glyphicon glyphicon-th-list"></i>分类管理</a>
-        <div class="child" style="display: none;">
+        <div class="child">
           <a href="first.html">一级菜单</a>
-          <a href="second.html">二级菜单</a>
+          <a href="second.html" class="current">二级菜单</a>
         </div>
       </li>
       <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i>商品管理</a></li>
@@ -45,12 +45,84 @@
       <!--路径导航-->
       <ol class="breadcrumb">
         <li><a href="#">系统管理</a></li>
-        <li class="active">用户管理</li>
+        <li class="active">分类管理</li>
+        <li class="active">二级分类</li>
       </ol>
+      <button class="btn btn-default" id="addBtn">添加分类</button>
+      <div class="lt_content mt_20">
+
+        <table class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th style="width:10%;">序号</th>
+            <th style="width:30%;">一级分类名称</th>
+            <th style="width:30%;">二级分类名称</th>
+            <th style="width:30%;">二级分类LOGO</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <!-- 刨个坑 -->
+
+          </tbody>
+        </table>
+
+        <!-- 分页dom结构 -->
+        <div class="text-right">
+          <ul id="paginator"></ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 添加模态框-->
+<div class="modal fade" id="addModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form">
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="true">
+                <span class="txt">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+               <!--刨个坑-->
+              </ul>
+            </div>
+            <input type="hidden" name="categoryId">
+            <input type="hidden" name="hot" value="1">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入二级分类" name="brandName">
+          </div>
+          <div class="form-group">
+            <label for="fileupload" class="btn btn-default">上传图片</label>
+            <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic"
+                   style="display: none;">
+          </div>
+          <div class="form-group">
+            <img src="images/none.png" width='100' alt="">
+            <input type="hidden" name="brandLogo" >
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary" form="form">添加</button>
+      </div>
     </div>
   </div>
 </div>
 
+<!--退出模态框-->
 <div class="modal fade" id="logOut">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -71,8 +143,29 @@
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
-<script src="js/first.js"></script>
+<script src="js/second.js"></script>
+
+<script type="text/template" id="secondTmp">
+  {{each rows v i}}
+  <tr>
+    <td>{{(page-1)*size + (i + 1)}}</td>
+    <td>{{v.categoryName}}</td>
+    <td>{{v.brandName}}</td>
+    <td><img src="{{v.brandLogo}}?{{v.brandLogo}}:images/none.png" width='80'></td>
+  </tr>
+  {{/each}}
+</script>
+
+<script type="text/template" id="modalTmp">
+  {{each rows v }}
+  <li><a href="#" data-id="{{v.id}}">{{v.categoryName}}</a></li>
+  {{/each}}
+</script>
 </body>
 </html>
