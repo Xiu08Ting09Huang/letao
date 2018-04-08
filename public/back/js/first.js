@@ -24,6 +24,20 @@ $(function () {
           bootstrapMajorVersion:3,
           currentPage:info.page,
           totalPages:Math.ceil(info.total/info.size),
+          itemTexts: function(type, page, current) { //修改显示文字
+            switch (type) {
+              case "first":
+                return "首页";
+              case "prev":
+                return "上一页";
+              case "next":
+                return "下一页";
+              case "last":
+                return "尾页";
+              case "page":
+                return page;
+            }
+          },
           onPageClicked:function(event, originalEvent, type,page){
             //为按钮绑定点击事件 page:当前点击的按钮值
             currentPage = page;
