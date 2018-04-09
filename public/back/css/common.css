@@ -103,15 +103,21 @@ a:active{
 .main{
   padding-left:180px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top:0;
   right:0;
   transition: all 1s;
 }
 .main_top{
   height: 50px;
-  line-height:50px;
+  line-height: 50px;
   background-color: #3C8DBC;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-left: 180px;
+  z-index: 666;
+  width: 100%;
 }
 .main.hideMenu{
   padding-left:0;

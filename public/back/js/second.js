@@ -23,7 +23,8 @@ $(function () {
           bootstrapMajorVersion:3,
           currentPage:info.page,
           totalPages:Math.ceil(info.total/info.size),
-          itemTexts: function(type, page, current) { //修改显示文字
+          //修改分页显示文字
+          itemTexts: function(type, page, current) {
             switch (type) {
               case "first":
                 return "首页";
@@ -49,8 +50,9 @@ $(function () {
 
 // 2 点击添加分类
   $('#addBtn').on('click',function () {
+    //模态框显示
     $('#addModal').modal('show');
-    //请求ajax渲染下拉菜单
+    //请求ajax渲染一级分类
     $.ajax({
       url:'/category/queryTopCategoryPaging',
       data:{
@@ -64,7 +66,7 @@ $(function () {
       }
     })
   })
-//  3.注册委托事件，改变文本
+//  3.注册委托事件，改变一级分类文本
   $('.dropdown-menu').on('click','a',function () {
     var txt = $(this).text();
     var id = $(this).data('id');
