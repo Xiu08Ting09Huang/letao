@@ -1,11 +1,11 @@
 /**
  * Created by Damon on 2018/4/9.
  */
-$(function () {
+define(['mui'],function (mui) {
   mui('.mui-scroll-wrapper').scroll({
     indicators: false, //是否显示滚动条
   });
-})
+
 // 获取拼接地址封装
 function getSearch(key) {
   var search = location.search;
@@ -21,4 +21,5 @@ function getSearch(key) {
   })
   return obj[key];
 }
-
+  return getSearch;
+})

@@ -1,0 +1,43 @@
+.mui-table-cell{
+  /*padding:10px;*/
+  height: 90px;
+  display: block;
+}
+.img_box{
+  width:60px;
+}
+.img_box img{
+  width:100%;
+}
+.infoBox{
+  overflow: hidden;
+  padding-left:5px;
+}
+.infoBox .proName{
+  color: #333;
+  height:42px;
+}
+.lt_total{
+  position: absolute;
+  left:0;
+  bottom:55px;
+  height:30px;
+  padding-left:10px;
+  line-height:30px;
+  font-size:14px;
+  color: #f00;
+  width:100%;
+  background-color: #eeeeee;
+}
+.btn_order{
+  padding:0 10px;
+  background-color: #f00;
+  color: #fff;
+}
+
+.lt_container{
+  padding-bottom:85px;
+}
+.mui-popup-text{
+  text-align: left;
+}

@@ -1,7 +1,8 @@
 /**
  * Created by Damon on 2018/4/9.
  */
-$(function () {
+
+require(['mui','zepto','common','template'],function (mui,$,getSearch,template) {
   $.ajax({
     url:'/category/queryTopCategory',
     success:function (info) {

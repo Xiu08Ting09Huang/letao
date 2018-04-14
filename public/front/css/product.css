@@ -17,6 +17,9 @@
   border: 1px solid #ccc;
   line-height: 30px;
 }
+.lt_size span.current{
+  background-color: #069;
+}
 .lt_num span{
   font-size: 14px;
   color: #666;

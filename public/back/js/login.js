@@ -2,7 +2,7 @@
  * Created by Damon on 2018/4/6.
  */
 
-$(function () {
+require(['jquery','bootstrap','common','bootstrapValidator'],function ($) {
   $('#form').bootstrapValidator({
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',

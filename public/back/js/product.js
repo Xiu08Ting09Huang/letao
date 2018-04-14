@@ -1,8 +1,7 @@
 /**
  * Created by Damon on 2018/4/9.
  */
-
-$(function(){
+require(['jquery','template','bootstrap','bootstrapValidator','bootstrapPaginator','common','jquery-ui/ui/widget','jqueryFileupload'],function ($,template) {
   var currentPage = 1;
   var pageSize = 5;
   var picArr = [];

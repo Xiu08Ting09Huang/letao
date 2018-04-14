@@ -146,3 +146,21 @@ img{
   color: #FF3636;
   margin-right: 5px;
 }
+
+
+
+.lt_size span{
+  padding:5px;
+  background-color: #f5f5f5;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+}
+.lt_size span.current{
+  background-color: #069;
+}
+.lt_num span{
+  font-size: 14px;
+  color: #666;
+
+}

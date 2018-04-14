@@ -1,7 +1,15 @@
 /**
  * Created by Damon on 2018/4/6.
  */
-$(function () {
+//
+//<script src="lib/jquery/jquery.js"></script>
+//  <script src="lib/bootstrap/js/bootstrap.js"></script>
+//  <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+//  <script src="lib/nprogress/nprogress.js"></script>
+//  <script src="lib/echarts/echarts.min.js"></script>
+//  <script src="js/common.js"></script>
+
+require(['jquery','echarts','bootstrap','bootstrapValidator','common'],function ($,echarts) {
   // 基于准备好的dom，初始化echarts实例
   var echarts1 = echarts.init(document.querySelector(".echarts_1"));
 

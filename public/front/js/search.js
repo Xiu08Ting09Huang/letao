@@ -2,7 +2,7 @@
  * Created by Damon on 2018/4/10.
  */
 
-$(function () {
+require(['mui','zepto','common','template'],function (mui,$,getSearch,template) {
 //  获取存储本地的数据
   function getHistory() {
     var history = localStorage.getItem('search_list') || '[]';

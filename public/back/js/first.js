@@ -1,9 +1,14 @@
 /**
  * Created by Damon on 2018/4/7.
  */
-
-
-$(function () {
+//<script src="lib/jquery/jquery.js"></script>
+//  <script src="lib/bootstrap/js/bootstrap.js"></script>
+//  <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+//  <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+//  <script src="lib/artTemplate/template-web.js"></script>
+//  <script src="lib/nprogress/nprogress.js"></script>
+//  <script src="js/common.js"></script>
+require(['jquery','template','bootstrap','bootstrapValidator','bootstrapPaginator','common'],function ($,template) {
   var currentPage = 1;
   var pageSize = 5;
   //1 渲染页面
